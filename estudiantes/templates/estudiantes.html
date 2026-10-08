@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Estudiantes</title>
+	</head>
+	<body>
+		<h1>Formulario de estudiante</h1>
+
+		{% if mensaje %}
+			<p>{{ mensaje }}</p>
+		{% endif %}
+
+		<form method="POST">
+			{% csrf_token %}
+
+			<p>
+				<label>Tipo de Documento</label><br>
+				<input type="text" name="tipo_documento" maxlength="20" required>
+			</p>
+
+			<p>
+				<label>Número de documento</label><br>
+				<input type="text" name="numero_documento" maxlength="20" required>
+			</p>
+
+			<p>
+				<label>Nombre</label><br>
+				<input type="text" name="nombre" maxlength="100" required>
+			</p>
+
+			<p>
+				<label>Apellido</label><br>
+				<input type="text" name="apellido" maxlength="100" required>
+			</p>
+
+			<p>
+				<label>whatsapp</label><br>
+				<input type="text" name="whatsapp" maxlength="20" required>
+			</p>
+
+			<p>
+				<label>Fecha</label><br>
+				<input type="date" name="fecha" maxlength="10" required>
+			</p>
+
+			<p>
+				<label>Asistencia</label><br>
+				<select name="asistencia">
+					<option value="true">Asistió</option>
+					<option value="false" selected>No asistió</option>
+				</select>
+			</p>
+
+			<button type="submit">
+				Registrar
+			</button>
+		</form>
+	</body>
+</html>
